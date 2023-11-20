@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Table Task</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+   <div class="Container" id="container">
+        <div class="inputs">
+            <div>
+                <span id="msgTagName" style="visibility: hidden;">Please Enter Tag Name</span>
+                <input id="inputTagName" type="text" placeholder="Enter Tag Name">
+            </div>
+
+            <div>
+                <span id="msgClassName" style="visibility: hidden;">Please Enter Class Name</span>
+                <input id="inputClassName" type="text" placeholder="Enter Class Name">
+            </div>
+
+            <div>
+                <span id="msgID" style="visibility: hidden;">Please Enter ID</span>
+                <input id="inputID" type="text" placeholder="Enter ID">
+            </div>
+
+            <div>
+                <span id="msgName" style="visibility: hidden;">Please Enter Name</span>
+                <input id="inputName" type="text" placeholder="Enter Name">
+            </div>
+
+        </div>
+
+        <div class="inputs" id="inputID"></div>
+        <div class="inputs"></div>
+        <div class="inputs"></div>
+        <div class="inputs"></div>
+
+        <button id="ShowResult" onclick="showResult()" name="Show Result">Show Result</button>
+
+    </div>
+
+    <p id="result"></p>
+
+
+    <script src="./code.js"></script>
+</body>
+
+</html>
