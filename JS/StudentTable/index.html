@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Table Task</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="Container" id="container">
+        <div>
+            <span id="msgName" style="visibility: hidden;"></span>
+            <input id="studentName" type="text" placeholder="Enter Student Name">
+        </div>
+        <div>
+            <span id="msgAge" style="visibility: hidden;"></span>
+            <input id="studentAge" type="text" placeholder="Enter Student Age">
+        </div>
+        <button id="addStudent" onclick="addStudent()">Add Student</button>
+    </div>
+
+    <div class="studentTable" id="studentTable">
+       
+        <div class="tableHeader">
+            <p>ID</p>
+            <p>Name</p>
+            <p>Age</p>
+            <p>Action</p>
+        </div>    
+    </div>
+    <script src="./code.js"></script>
+</body>
+
+</html>
