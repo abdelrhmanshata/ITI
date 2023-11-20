@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation Task</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="Container" id="container">
+        <h2>
+            Form Validation
+        </h2>
+
+
+        <div class="mainContainer">
+            <div class="rawData">
+                <div class="lable">
+                    <span>Name</span>
+                </div>
+                <div class="input">
+                    <div>
+                        <p id="msgName" style="display: none;">Please Enter Name</p>
+                        <input id="name" type="text">
+                    </div>
+                </div>
+            </div>
+
+            <div class="rawData">
+                <div class="lable">
+                    <span>Email</span>
+                </div>
+                <div class="input">
+                    <div>
+                        <p id="msgEmail" style="display: none;">Please Enter Email</p>
+                        <input type="email" id="email">
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="rawData">
+                <div class="lable">
+                    <span>Password</span>
+                </div>
+                <div class="input">
+                    <div>
+                        <p id="msgPasswprd" style="display: none;">Please Enter Password</p>
+                        <input type="password" id="password">
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="rawData">
+                <div class="lable">
+                    <span>Gender</span>
+                </div>
+                <div class="input">
+                    <div>
+                        <p id="msgGender" style="display: none;">Please Select Gender</p>
+                        <input type="radio" id="male" name="Gender" value="male">
+                        <label for="Gender">Male</label>
+                        <input type="radio" id="female" name="Gender" value="female">
+                        <label for="Gender">Female</label>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="rawData">
+                <div class="lable">
+                    <span>Sports</span>
+                </div>
+                <div class="input">
+                    <div>
+                        <p id="msgSports" style="display: none;">Please Select 2 Sport</p>
+                        <input type="checkbox" id="tennis" name="fav_Sports" value="tennis">
+                        <label for="fav_Sports">Tennis</label>
+                        <input type="checkbox" id="running" name="fav_Sports" value="running">
+                        <label for="fav_Sports">Running</label>
+                        <input type="checkbox" id="football" name="fav_Sports" value="football">
+                        <label for="fav_Sports">Football</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rawData">
+                <div class="lable">
+                    <span>Country</span>
+                </div>
+                <div class="input">
+                    <div>
+                        <p id="msgCountry" style="display: none;">Please Select Country</p>
+                        <select name="Country" id="country">
+                            <option value="">Select Country</option>
+                            <option value="American Samoa">American Samoa</option>
+                            <option value="Andorra">Andorra</option>
+                            <option value="Angola">Angola</option>
+                            <option value="Bahamas">Bahamas</option>
+                            <option value="Bahrain">Bahrain</option>
+                            <option value="Bangladesh">Bangladesh</option>
+                            <option value="Cambodia">Cambodia</option>
+                            <option value="Cameroon">Cameroon</option>
+                            <option value="Canada">Canada</option>
+                            <option value="Denmark">Denmark</option>
+                            <option value="Djibouti">Djibouti</option>
+                            <option value="Dominica">Dominica</option>
+                            <option value="Ecuador">Ecuador</option>
+                            <option value="Egypt">Egypt</option>
+                            <option value="El Salvador">El Salvador</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="buttons">
+                <div class="input">
+                    <button id="Submit" onclick="Submit()">Submit</button>
+                    <button id="Reset" onclick="Reset()">Reset</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="./code.js"></script>
+</body>
+
+</html>

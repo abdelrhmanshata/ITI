@@ -1,0 +1,111 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.Container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.mainContainer {
+    width: 400px;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    border: 2px dashed lightblue;
+    border-radius: 10px;
+    background-color: lightblue;
+}
+
+h2 {
+    border: 2px dashed lightblue;
+    padding: 4px;
+    margin: 10px;
+}
+
+.rawData {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin: 4px;
+}
+
+.rawData .lable {
+    width: 80px;
+    text-align: center;
+}
+
+.rawData .input {
+    width: 200px;
+    display: flex;
+    align-items: center;
+}
+
+p {
+    border: 1px solid red;
+    border-radius: 4px;
+    font-size: 10px;
+    padding: 2px;
+    display: flex;
+    align-items: center;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 175px;
+    border: 1px solid red;
+    outline: none;
+    border-radius: 4px;
+}
+
+select {
+    width: 175px;
+    border: 1px solid red;
+    outline: none;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+option {
+    font-size: 12px;
+}
+
+label {
+    font-size: 12px;
+    margin-right: 4px;
+    margin-left: 4px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: end;
+    padding-left: 20px;
+}
+
+
+.buttons button {
+    width: 60px;
+    margin-top: 10px;
+    margin-left: 10px;
+    color: white;
+    padding: 6px;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+    box-shadow: 0px 0px 4px black;
+}
+
+#Submit {
+    background-color: green;
+}
+
+#Reset {
+    background-color: red;
+}
