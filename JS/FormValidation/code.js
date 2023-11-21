@@ -12,6 +12,15 @@ var ResetBtn = document.getElementById("Reset");
 
 var msg = document.getElementsByTagName("p");
 
+country.onchange = function (event) {
+    if (event.target.value.length == 0) {
+        country.style.border = "1px solid red"
+    } else {
+        country.style.border = "1px solid green"
+    }
+};
+
+
 function getGender(Genders) {
     for (var i = 0; i < Genders.length; i++) {
         if (Genders[i].checked) {
@@ -39,12 +48,16 @@ userName.oninput = function (event) {
     }
 }
 
+function isValidEmail(email) {
+    const emailRegex = /^[a-zA-Z]+[a-zA-Z0-9]*@[a-zA-Z]+\.[a-zA-Z]+$/;
+    return emailRegex.test(email);
+}
+
 userEmail.oninput = function () {
-    var emailRegex = /^[a-zA-Z]+@gmail.com$/;
-    if (userEmail.value.match(emailRegex) == null) {
-        userEmail.style.border = "1px solid red"
+    if (!isValidEmail(userEmail.value)) {
+        userEmail.style.border = "1px solid red";
     } else {
-        userEmail.style.border = "1px solid green"
+        userEmail.style.border = "1px solid green";
     }
 }
 
@@ -66,8 +79,7 @@ function Submit() {
         msg[0].style.display = "none";
     }
 
-    var emailRegex = /^[a-zA-Z]+@gmail.com$/;
-    if (userEmail.value.match(emailRegex) == null) {
+    if (!isValidEmail(userEmail.value)) {
         console.log("Please enter valid Email");
         msg[1].style.display = "block";
         return;
@@ -118,6 +130,16 @@ function Reset() {
     Genders.forEach(element => element.checked = false);
     Sports.forEach(element => element.checked = false);
     country.options[0].selected = true;
+
+    userName.style.border = "1px solid red";
+    userEmail.style.border = "1px solid red";
+    userPassword.style.border = "1px solid red";
+    country.style.border = "1px solid red"
+
+    for (var i = 0; i < msg.length; i++) {
+        msg[i].style.display = "none";
+    }
+
 }
 
 
