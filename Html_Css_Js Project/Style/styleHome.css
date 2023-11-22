@@ -1,0 +1,196 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+/* Navbar */
+div.Navbar {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    padding: 8px;
+    margin-top: 30px;
+}
+
+hr {
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid black;
+}
+
+div.Navbar h1 {
+    width: 300px;
+    align-items: center;
+
+    font-weight: bold;
+    font-size: 45px;
+}
+
+div.Navbar .links {
+    display: flex;
+    align-items: center;
+    align-self: center;
+    justify-items: center;
+    justify-content: space-evenly;
+    width: 30%;
+    margin-right: auto;
+}
+
+div.Navbar a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+
+div.Navbar #homePage {
+    text-decoration: underline;
+}
+
+div.Navbar a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* Search Container */
+.search {
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+    margin-right: 300px;
+    background-color: white;
+    padding: 2px;
+    border-radius: 4px;
+    box-shadow: 0px 0px 2px black;
+}
+
+.search input {
+    width: 80%;
+    outline: none;
+    border: none;
+    background-color: white;
+}
+
+/* Icons Favorite/Cart */
+.icons {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+    margin-right: 100px;
+}
+
+span.icon {
+    font-size: 40px;
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+span.icon:hover {
+    cursor: pointer;
+}
+
+/* Image Slider */
+
+.imageSlider {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.imageSlider img {
+    width: 80%;
+    height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    justify-items: center;
+}
+
+.imageSlider .arrow {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    padding: 10px;
+    border: 4px solid #db4444;
+}
+
+.imageSlider .arrow:hover {
+    background-color: #db4444;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+/* Content */
+
+div.title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+div#startPoint {
+    width: 15px;
+    height: 35px;
+    border-radius: 5px;
+    background-color: #db4444;
+    display: inline-block;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+div.title span {
+    color: #db4444;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+div.categoryContanir {
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-evenly;
+}
+
+div.categoryContanir div {
+    width: 100px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+
+}
+
+div.categoryContanir div:hover {
+    background-color: #db4444;
+}
+
+div.categoryContanir div img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
