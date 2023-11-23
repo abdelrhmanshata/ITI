@@ -7,86 +7,106 @@
     <title>Home</title>
     <link rel="stylesheet" href="../Style/styleHome.css">
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Round" rel="stylesheet" />
+    <!-- Font Awesome Icon Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 
 <body>
 
-    <!-- Navbar -->
-    <div class="Navbar">
-        <!-- Website Name -->
-        <h1>Shoping</h1>
-        <!-- Navigation between 3 paged -->
-        <div class="links">
-            <a id="homePage" href="./Home.html">Home</a>
-            <a id="aboutPage" href="./About.html">About</a>
-            <a id="contactPage" href="./Contact_US.html">Contact US</a>
+    <div class="content">
+        <!-- Navbar -->
+        <div class="Navbar">
+            <!-- Website Name -->
+            <h1>Shoping</h1>
+            <!-- Navigation between 3 paged -->
+            <div class="links">
+                <a id="homePage" href="./Home.html">Home</a>
+                <a id="aboutPage" href="./About.html">About</a>
+                <a id="contactPage" href="./Contact_US.html">Contact US</a>
+            </div>
+            <!-- Search Container -->
+            <div class="search">
+                <input type="text">
+                <span class="material-icons-round">search</span>
+            </div>
+            <!-- Icons Favorite/Cart  -->
+            <div class="icons">
+                <!-- <span class="material-icons-round" style="color: red;">favorite</span> -->
+                <span id="favorite" class="material-icons-round icon favorite"
+                    style="color: red;">favorite_border</span>
+                <span class="material-icons-round icon cart">shopping_cart </span>
+                <!-- <span id="countIcon">1</span> -->
+            </div>
         </div>
-        <!-- Search Container -->
-        <div class="search">
-            <input type="text">
-            <span class="material-icons-round">search</span>
+
+        <br>
+        <hr>
+        <br>
+
+        <!-- Image Slider -->
+        <div class="imageSlider">
+            <img src="../images/icons/left-arrow.png" alt="left-arrow" class="arrow" onclick="previous()">
+            <img id="image" src="../images/sliderImage1.jpg" alt="image">
+            <img src="../images/icons/right-arrow.png" alt="right-arrow" class="arrow" onclick="next()">
         </div>
-        <!-- Icons Favorite/Cart  -->
-        <div class="icons">
-            <!-- <span class="material-icons-round" style="color: red;">favorite</span> -->
-            <span id="favorite" class="material-icons-round icon favorite" style="color: red;">favorite_border</span>
-            <span class="material-icons-round icon cart">shopping_cart </span>
-            <!-- <span id="countIcon">1</span> -->
+        <!-- The dots/circles -->
+        <div id="dots" style="text-align:center">
         </div>
+
+        <br>
+        <hr>
+        <br>
+
+        <!-- Categories  -->
+        <div class="title">
+            <div id="startPoint"></div>
+            <span>Categories</span>
+        </div>
+        <br>
+        <h2>Browse By Category</h2>
+        <br>
+        <div class="categoryContanir">
+            <div class="category" id="0">
+                <img src="../images/icons/smartphone.png" alt="smartphone">
+                <span>Phones</span>
+            </div>
+            <div class="category" id="1">
+                <img src="../images/icons/computers.png" alt="computers">
+                <span>Computers</span>
+            </div>
+            <div class="category" id="2">
+                <img src="../images/icons/smart-watch.png" alt="smart-watch">
+                <span>SmartWatch</span>
+            </div>
+            <div class="category" id="3">
+                <img src="../images/icons/camera.png" alt="camera">
+                <span>Camera</span>
+            </div>
+            <div class="category" id="4">
+                <img src="../images/icons/earphones.png" alt="earphones">
+                <span>HeadPhones</span>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="categoryProductsContainer">
+            <div class="Products" id="Products">
+            </div>
+        </div>
+
+        <br>
+        <hr>
+        <br>
     </div>
 
-    <br>
-    <hr>
-    <br>
 
-    <!-- Image Slider -->
-    <div class="imageSlider">
-        <img src="../images/icons/left-arrow.png" alt="left-arrow" class="arrow" onclick="previous()">
-        <img id="image" src="../images/sliderImage1.jpg" alt="image">
-        <img src="../images/icons/right-arrow.png" alt="right-arrow" class="arrow" onclick="next()">
-    </div>
-    <!-- The dots/circles -->
-    <div id="dots" style="text-align:center">
+    <!-- Footer Section -->
+    <div class="Footer">
+
     </div>
 
-    <br>
-    <hr>
-    <br>
-
-    <!-- Categories  -->
-    <div class="title">
-        <div id="startPoint"></div>
-        <span>Categories</span>
-    </div>
-    <br>
-    <h2>Browse By Category</h2>
-
-    <div class="categoryContanir">
-        <div>
-            <img src="../images/icons/smartphone.png" alt="">
-            <span>Phones</span>
-        </div>
-        <div>
-            <img src="../images/icons/monitor.png" alt="">
-            <span>Computers</span>
-        </div>
-        <div>
-            <img src="../images/icons/smart-watch.png" alt="">
-            <span>SmartWatch</span>
-        </div>
-        <div>
-            <img src="../images/icons/camera.png" alt="">
-            <span>Camera</span>
-        </div>
-        <div>
-            <img src="../images/icons/earphones.png" alt="">
-            <span>HeadPhones</span>
-        </div>
-    </div>
-
-
-
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <!-- script code js  -->
     <script src="../Code/codeHome.js"></script>
 </body>
 

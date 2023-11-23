@@ -3,7 +3,7 @@
     padding: 0px;
 }
 
-body {
+.content {
     padding-left: 100px;
     padding-right: 100px;
 }
@@ -27,9 +27,9 @@ hr {
 div.Navbar h1 {
     width: 300px;
     align-items: center;
-
     font-weight: bold;
     font-size: 45px;
+    color: #db4444;
 }
 
 div.Navbar .links {
@@ -55,6 +55,7 @@ div.Navbar #homePage {
 div.Navbar a:hover {
     text-decoration: underline;
     cursor: pointer;
+    color: #db4444;
 }
 
 /* Search Container */
@@ -185,12 +186,91 @@ div.categoryContanir div {
 
 }
 
-div.categoryContanir div:hover {
-    background-color: #db4444;
-}
-
 div.categoryContanir div img {
     width: 50px;
     height: 50px;
     margin-bottom: 10px;
+}
+
+/* categoryProductsContainer */
+div.categoryProductsContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+div.Products {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+div.productContainer {
+    width: 200px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 8px gray;
+    margin: 20px;
+    padding: 10px;
+}
+
+div.productContainer img {
+    width: auto;
+    height: 100px;
+    border-radius: 5px;
+}
+
+div.productContainer>span {
+    width: auto;
+    height: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin: 15px;
+}
+
+div.productContainer p {
+    font-size: 10px;
+    height: 50px;
+    text-align: center;
+    margin: 10px;
+}
+
+div.ratingProdact {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+span.checked {
+    color: orange;
+}
+
+div.productContainer button {
+    width: 150px;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #db4444;
+    border: none;
+    color: white;
+    opacity: 0.7;
+}
+
+div.productContainer button:hover {
+    opacity: 1;
+}
+
+
+/* Footer Section*/
+div.Footer {
+    width: 100%;
+    height: auto;
+    min-height: 200px;
+    background-color: black;
 }
