@@ -24,6 +24,18 @@ hr {
     border: 1px solid black;
 }
 
+div.logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+div.logo img {
+    width: auto;
+    height: 50px;
+    margin-right: 10px;
+}
+
 div.Navbar h1 {
     width: 300px;
     align-items: center;
@@ -88,13 +100,13 @@ div.Navbar a:hover {
     margin-right: 100px;
 }
 
-span.icon {
+span.navbarIcon {
     font-size: 40px;
     margin-right: 15px;
     margin-left: 15px;
 }
 
-span.icon:hover {
+span.navbarIcon:hover {
     cursor: pointer;
 }
 
@@ -271,6 +283,66 @@ div.productContainer button:hover {
 div.Footer {
     width: 100%;
     height: auto;
-    min-height: 200px;
-    background-color: black;
+    display: flex;
+    flex-direction: row;
+    background-color: #465052;
+    align-items: center;
+    justify-content: space-between;
+}
+
+div.Footer div p {
+    color: white;
+    text-align: center;
+    margin: 10px;
+}
+
+div.socialIcons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10px;
+    height: 10px;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: #1a1e1f;
+    margin: 10px;
+}
+
+.icon:hover {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10px;
+    height: 10px;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: #db4444;
+    margin: 10px;
+}
+
+i {
+    font-size: 16px;
+    color: white;
+}
+
+.copyright {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.topIcon {
+    margin-right: 100px;
+}
+
+.topIcon .icon {
+    width: 30px;
+    height: 30px;
 }

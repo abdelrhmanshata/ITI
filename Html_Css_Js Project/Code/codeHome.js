@@ -21,11 +21,11 @@ var dotsContanir = document.getElementById("dots");
 
 var index = 0;
 var images = [
-    "../images/sliderImage1.jpg",
-    "../images/sliderImage2.jpg",
-    "../images/sliderImage3.jpg",
-    "../images/sliderImage4.jpg",
-    "../images/sliderImage5.jpg"
+    "../images/slider/sliderImage1.jpg",
+    "../images/slider/sliderImage2.jpg",
+    "../images/slider/sliderImage3.jpg",
+    "../images/slider/sliderImage4.jpg",
+    "../images/slider/sliderImage5.jpg"
 ];
 
 function createDots() {
