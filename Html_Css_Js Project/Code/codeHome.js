@@ -1,25 +1,6 @@
-// ////////////////////////////////// 
-// Navbar Icons
-var favorite = document.getElementById("favorite");
-favorite.onmouseover = function () {
-    favorite.innerHTML = "favorite";
-}
-favorite.onmouseout = function () {
-    favorite.innerHTML = "favorite_border";
-}
-
-favorite.onclick = function () {
-    alert("favorite");
-};
-
-// //////////////////////////////////
-// Image Slider
-
-var image = document.getElementById("image");
-var dotsContanir = document.getElementById("dots");
-
-
-var index = 0;
+//////////////////////////////////////////////////
+// Database 
+// Slider Images
 var images = [
     "../images/slider/sliderImage1.jpg",
     "../images/slider/sliderImage2.jpg",
@@ -27,69 +8,7 @@ var images = [
     "../images/slider/sliderImage4.jpg",
     "../images/slider/sliderImage5.jpg"
 ];
-
-function createDots() {
-
-    for (var i = 0; i < images.length; i++) {
-        var dot = document.createElement("span");
-        dot.className = "dot";
-        dotsContanir.appendChild(dot);
-    }
-}
-createDots();
-
-var dots = document.getElementsByClassName("dot");
-
-function selectedDot(index) {
-    for (var i = 0; i < dots.length; i++) {
-        if (i == index) {
-            dots[i].style.backgroundColor = "#db4444";
-        } else {
-            dots[i].style.backgroundColor = "#bbb";
-        }
-    }
-}
-
-function next() {
-    index += 1;
-    if (index == images.length)
-        index = 0;
-    image.setAttribute("src", images[index % images.length]);
-    selectedDot(index);
-}
-
-function previous() {
-    index -= 1;
-    if (index < 0)
-        index = images.length - 1
-    image.setAttribute("src", images[index % images.length]);
-    selectedDot(index);
-}
-
-var interval;
-function autoPlay() {
-    interval = setInterval(next, 3000);
-}
-
-autoPlay()
-// //////////////////////////////////
-// Categories
-var indexSelectedCategory = 0;
-var categorys = document.getElementsByClassName("category");
-function selectCategory(categorySelectted) {
-    for (var i = 0; i < categorys.length; i++) {
-        if (i == categorySelectted) {
-            categorys[i].style.backgroundColor = "#db4444";
-        } else {
-            categorys[i].style.backgroundColor = "#fff";
-        }
-    }
-}
-
-
-// 
 // Data Products
-
 var phoneProducts = [
     {
         id: "1",
@@ -304,9 +223,114 @@ var earphoneProducts = [
         price: "1,200 EGP",
     }
 ];
+//////////////////////////////////////////////////
+// CartProduct
+var cartProduct = [];
+var cartItems = document.getElementById("cartItems");
+function createCartItems() {
+    cartItems.innerHTML = "";
+    for (var i = 0; i < cartProduct.length; i++) {
+        var cartItem = document.createElement('div');
+        cartItem.className = "cartItem";
 
-//
+        var itemName = document.createElement('span');
+        itemName.className = "item";
+        itemName.innerHTML = cartProduct[i].title;
 
+        var itemQuantity = document.createElement('span');
+        itemQuantity.className = "item";
+        itemQuantity.innerHTML = "1";
+
+        var itemPrice = document.createElement('span');
+        itemPrice.className = "item";
+        itemPrice.innerHTML = cartProduct[i].price;
+
+        var itemDelete = document.createElement('span');
+        itemDelete.className = "item";
+        itemDelete.innerHTML = `<i class="fa fa-trash" id=${i} style="font-size: 20px;"></i>`;
+
+        itemDelete.onclick = function (event) {
+            cartProduct.splice(event.target.id, 1);
+            createCartItems();
+        }
+
+        cartItem.append(itemName, itemQuantity, itemPrice, itemDelete);
+        cartItems.appendChild(cartItem);
+    }
+}
+//////////////////////////////////////////////////
+// Cart Model
+// Get the modal
+var modal = document.getElementById("myModal");
+var closeIcon = document.getElementById("closeIcon");
+closeIcon.onclick = function () {
+    modal.style.display = "none";
+}
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+/////////////////////////
+// Navbar Icons
+var cartIcon = document.getElementById("cartIcon");
+cartIcon.onclick = function () {
+    modal.style.display = "block";
+};
+/////////////////////////
+// Image Slider
+var index = 0;
+var image = document.getElementById("image");
+var dotsContanir = document.getElementById("dots");
+function createDots() {
+    for (var i = 0; i < images.length; i++) {
+        var dot = document.createElement("span");
+        dot.className = "dot";
+        dotsContanir.appendChild(dot);
+    }
+}
+///////////////
+var dots = document.getElementsByClassName("dot");
+function selectedDot(index) {
+    for (var i = 0; i < dots.length; i++) {
+        if (i == index) {
+            dots[i].style.backgroundColor = "#db4444";
+        } else {
+            dots[i].style.backgroundColor = "#bbb";
+        }
+    }
+}
+function next() {
+    index += 1;
+    if (index == images.length)
+        index = 0;
+    image.setAttribute("src", images[index % images.length]);
+    selectedDot(index);
+}
+function previous() {
+    index -= 1;
+    if (index < 0)
+        index = images.length - 1
+    image.setAttribute("src", images[index % images.length]);
+    selectedDot(index);
+}
+var interval;
+function autoPlay() {
+    interval = setInterval(next, 3000);
+}
+/////////////////////////
+// Categories
+var indexSelectedCategory = 0;
+var categorys = document.getElementsByClassName("category");
+function selectCategory(categorySelectted) {
+    for (var i = 0; i < categorys.length; i++) {
+        if (i == categorySelectted) {
+            categorys[i].style.backgroundColor = "#db4444";
+        } else {
+            categorys[i].style.backgroundColor = "#fff";
+        }
+    }
+}
 function createRatingBar(ratingProdact) {
     var rating = document.createElement("div");
     rating.className = "rating";
@@ -321,8 +345,6 @@ function createRatingBar(ratingProdact) {
     }
     return rating;
 }
-
-
 var Products = document.getElementById("Products");
 function addProducts(dataProducts) {
     Products.innerHTML = '';
@@ -360,10 +382,11 @@ function addProducts(dataProducts) {
     }
 
     var addCartButtons = document.getElementsByClassName("addCartButton");
-
     function onClickBtnCart(event) {
         var product = dataProducts[Number(event.target.id)];
-        console.log("onClick : " + product.title);
+        cartProduct.push(product);
+        createCartItems();
+        console.log(cartProduct);
     }
 
     for (var i = 0; i < addCartButtons.length; i++) {
@@ -371,42 +394,48 @@ function addProducts(dataProducts) {
             onClickBtnCart(event);
         }
     }
-
 }
-
+//////////////////////////////////////////////////
+// Calling Function
+// Creates a Dot Of Sliders
+createDots();
+// autoPlaySlider 
+autoPlay()
 // Select Firts Category By Default
 selectCategory(0);
 addProducts(phoneProducts);
 
+//category Phone 
 categorys[0].onclick = function (event) {
     indexSelectedCategory = 0;
     selectCategory(indexSelectedCategory);
     addProducts(phoneProducts);
 }
-
+//category Computer 
 categorys[1].onclick = function (event) {
     indexSelectedCategory = 1;
     selectCategory(indexSelectedCategory);
     addProducts(computerProducts);
 }
-
+//category Smartwatch 
 categorys[2].onclick = function (event) {
     indexSelectedCategory = 2;
     selectCategory(indexSelectedCategory);
     addProducts(smartwatchProducts);
 }
-
+//category Camera 
 categorys[3].onclick = function (event) {
     indexSelectedCategory = 3;
     selectCategory(indexSelectedCategory);
     addProducts(cameraProducts);
 }
-
+//category Earphone 
 categorys[4].onclick = function (event) {
     indexSelectedCategory = 4;
     selectCategory(indexSelectedCategory);
     addProducts(earphoneProducts);
 }
+
 
 
 

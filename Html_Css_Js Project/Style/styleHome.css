@@ -8,6 +8,74 @@
     padding-right: 100px;
 }
 
+
+/* Cart Model */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding: 50px;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Modal Content */
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    background-color: #fefefe;
+    border: 1px solid #888;
+    width: 80%;
+    height: 80%;
+    padding: 20px;
+    overflow: auto;
+    border-radius: 10px;
+    margin: auto;
+
+}
+
+/* The Close Button */
+i#closeIcon {
+    align-self: flex-end;
+    color: #aaaaaa;
+    font-size: x-large;
+    margin-bottom: 10px;
+}
+
+i#closeIcon:hover {
+    color: #000;
+    cursor: pointer;
+}
+
+div.cartItem {
+    display: flex;
+    flex-direction: row;
+    border: none;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0px 0px 2px black;
+}
+
+div.cartItem .item {
+    width: 25%;
+    text-align: center;
+}
+
+div.cartItem .item i:hover {
+   color: red;
+}
+
+div.cartItems {
+    display: flex;
+    flex-direction: column;
+}
+
+
 /* Navbar */
 div.Navbar {
     height: 50px;
@@ -62,6 +130,7 @@ div.Navbar a {
 
 div.Navbar #homePage {
     text-decoration: underline;
+    color: #db4444;
 }
 
 div.Navbar a:hover {
@@ -100,14 +169,15 @@ div.Navbar a:hover {
     margin-right: 100px;
 }
 
-span.navbarIcon {
+i.navbarIcon {
     font-size: 40px;
     margin-right: 15px;
     margin-left: 15px;
 }
 
-span.navbarIcon:hover {
+i.navbarIcon:hover {
     cursor: pointer;
+    color: #db4444;
 }
 
 /* Image Slider */
@@ -296,6 +366,12 @@ div.Footer div p {
     margin: 10px;
 }
 
+div.Footer div a p:hover {
+    text-decoration: none;
+    color: #db4444;
+    cursor: pointer;
+}
+
 div.socialIcons {
     display: flex;
     justify-content: space-between;
@@ -325,7 +401,7 @@ div.socialIcons {
     margin: 10px;
 }
 
-i {
+.socialIcon {
     font-size: 16px;
     color: white;
 }
