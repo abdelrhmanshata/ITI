@@ -199,6 +199,7 @@ i.navbarIcon:hover {
     align-items: center;
     align-content: center;
     justify-items: center;
+    border-radius: 20px;
 }
 
 .imageSlider .arrow {
