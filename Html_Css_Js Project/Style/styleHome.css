@@ -349,6 +349,11 @@ div.productContainer button:hover {
     opacity: 1;
 }
 
+div.productContainer button:active {
+    opacity: 1;
+    background-color: red;
+}
+
 
 /* Footer Section*/
 div.Footer {

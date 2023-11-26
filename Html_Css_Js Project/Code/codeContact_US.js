@@ -1,10 +1,4 @@
 //////////////////////////////////////////////////
-
-function isValidName(name) {
-    const nameRegex = /^[a-zA-Z][a-zA-Z0-9]*/;
-    return nameRegex.test(name);
-}
-
 function isValidEmail(email) {
     const emailRegex = /^[a-zA-Z]+[a-zA-Z0-9]*@[a-zA-Z]+\.[a-zA-Z]+$/;
     return emailRegex.test(email);
@@ -15,91 +9,110 @@ function isValidPhone(phone) {
 }
 
 // 
+var myForm = document.getElementById("myForm");
+var errorMsgs = document.getElementsByClassName("errorMsg");
 
-var sendMassage = document.getElementById("sendMassage");
 var userName = document.getElementById("userName");
-userName.oninput = function (event) {
+function validationName() {
     if (userName.value.length == 0) {
         userName.style.border = "1px solid red";
+        errorMsgs[0].style.visibility = "visible";
+        errorMsgs[0].innerHTML = "* Name is required";
+        userName.setAttribute("placeholder", "* Name is required");
+        return true;
     } else {
         userName.style.border = "1px solid green";
+        errorMsgs[0].style.visibility = "hidden";
+        return false;
     }
 }
-
+userName.oninput = validationName;
+////////////////////////////
 var userEmail = document.getElementById("userEmail");
-userEmail.oninput = function (event) {
-    if (userEmail.value.length == 0 || !isValidEmail(userEmail.value)) {
-        userEmail.style.border = "1px solid red";
-    } else {
-        userEmail.style.border = "1px solid green";
-    }
-}
-
-var userPhone = document.getElementById("userPhone");
-userPhone.oninput = function (event) {
-    if (userPhone.value.length == 0 || !isValidPhone(userPhone.value)) {
-        userPhone.style.border = "1px solid red";
-    } else {
-        userPhone.style.border = "1px solid green";
-    }
-}
-
-var userMassage = document.getElementById("userMassage");
-userMassage.oninput = function (event) {
-    if (userMassage.value.length == 0) {
-        userMassage.style.border = "1px solid red";
-    } else {
-        userMassage.style.border = "1px solid green";
-    }
-}
-
-sendMassage.onclick = function () {
-
-    if (userName.value.length == 0) {
-        userName.style.border = "1px solid red";
-        userName.setAttribute("placeholder", "* Name is required");
-        return;
-    }
-
-    if (!isValidName(userName.value)) {
-        userName.style.border = "1px solid red";
-        userName.setAttribute("placeholder", "* Please Enter Valid Name");
-        return;
-    }
-
+function validationEmail() {
     if (userEmail.value.length == 0) {
         userEmail.style.border = "1px solid red";
+        errorMsgs[1].style.visibility = "visible";
+        errorMsgs[1].innerHTML = "* Email is required";
         userEmail.setAttribute("placeholder", "* Email is required");
-        return;
-    }
-
-    if (!isValidEmail(userEmail.value)) {
+        return true;
+    } else if (!isValidEmail(userEmail.value)) {
         userEmail.style.border = "1px solid red";
+        errorMsgs[1].style.visibility = "visible";
+        errorMsgs[1].innerHTML = "* Please Enter Valid Email";
         userEmail.setAttribute("placeholder", "* Please Enter Valid Email");
-        return;
+        return true;
+    } else {
+        userEmail.style.border = "1px solid green";
+        errorMsgs[1].style.visibility = "hidden";
+        return false;
     }
-
+}
+userEmail.oninput = validationEmail;
+////////////////////////////
+var userPhone = document.getElementById("userPhone");
+function validationPhone() {
     if (userPhone.value.length == 0) {
         userPhone.style.border = "1px solid red";
+        errorMsgs[2].style.visibility = "visible";
+        errorMsgs[2].innerHTML = "* Phone is required";
         userPhone.setAttribute("placeholder", "* Phone is required");
-        return;
-    }
-
-    if (!isValidPhone(userPhone.value)) {
+        return true;
+    } else if (!isValidPhone(userPhone.value)) {
         userPhone.style.border = "1px solid red";
-        userPhone.setAttribute("placeholder", "* Please Enter Valid Phone Number");
-        return;
+        errorMsgs[2].style.visibility = "visible";
+        errorMsgs[2].innerHTML = "* Please Enter Valid Phone";
+        userPhone.setAttribute("placeholder", "* Please Enter Valid Phone");
+        return true;
+    } else {
+        userPhone.style.border = "1px solid green";
+        errorMsgs[2].style.visibility = "hidden";
+        return false;
     }
-
-    if (userMassage.value.length == 0) {
-        userPhone.style.border = "1px solid red";
-        userPhone.setAttribute("placeholder", "* Phone is required");
-        return;
-    }
-
-
-    console.log(userName.value, userEmail.value, userPhone.value, userMassage.value);
-
-
-    // window.open(`mailto:abdelrhmanmohamedshata@gmail.com?subject=Rate the site&body=${userMassage}`);
 }
+userPhone.oninput = validationPhone;
+////////////////////////////
+var userMassage = document.getElementById("userMassage");
+function validationMassage() {
+    if (userMassage.value.length == 0) {
+        userMassage.style.border = "1px solid red";
+        errorMsgs[3].style.visibility = "visible";
+        errorMsgs[3].innerHTML = "* Massage is required";
+        userMassage.setAttribute("placeholder", "* Massage is required");
+        return true;
+    } else {
+        userMassage.style.border = "1px solid green";
+        errorMsgs[3].style.visibility = "hidden";
+        return false;
+    }
+}
+userMassage.oninput = validationMassage;
+////////////////////////////
+
+myForm.addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    if (validationName())
+        return;
+    if (validationEmail())
+        return;
+    if (validationPhone())
+        return;
+    if (validationMassage())
+        return;
+
+    var alertMsg = `Dear ${userName.value},
+        Thank you for contacting us
+        We will try to respond to you as soon as possible via 
+        email : ${userEmail.value} 
+        phone : ${userPhone.value}
+    Thank you for using our site
+    `;
+    alert(alertMsg);
+
+    userName.value = "";
+    userEmail.value = "";
+    userPhone.value = "";
+    userMassage.value = "";
+
+});

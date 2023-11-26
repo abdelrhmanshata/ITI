@@ -85,7 +85,7 @@ div.search {
     box-shadow: 0px 0px 2px black;
 }
 
-div.search input {
+div.search #searchText {
     width: 80%;
     outline: none;
     border: none;
@@ -134,7 +134,7 @@ div.contactUs {
     box-shadow: 0 0 5px rgba(0, 0, 0);
 }
 
-div.feedback {
+form.feedback {
     display: flex;
     flex-direction: column;
     width: 70%;
@@ -146,32 +146,53 @@ div.feedback {
     box-shadow: 0 0 5px rgba(0, 0, 0);
 }
 
-.inputs {
+.userData {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
 }
 
-input{
+.userData div {
+    width: 30%;
+}
+
+.userData div input {
+    width: 100%;
     border: none;
     box-shadow: 0 0 2px rgba(0, 0, 0);
     border-radius: 5px;
-    margin: 10px 0 10px 0;
+    padding: 5px;
+    outline: none;
+    height: 30px;
+}
+
+.userMsg {
+    height: 70%;
+}
+
+.userMsg input {
+    width: 100%;
+    height: 80%;
+    border: none;
+    box-shadow: 0 0 2px rgba(0, 0, 0);
+    border-radius: 5px;
     padding: 5px;
     outline: none;
 }
 
-.inputs input {
-    width: 30%;
-    height: 30px;
+.errorMsg {
+    font-size: 12px;
+    color: red;
+    padding: 5px;
+    visibility: hidden;
 }
 
-#userMassage {
-    height: 70%;
-}
 
-button {
-    padding: 12px;
+#sendMassage {
+    width: auto;
+    height: auto;
+    padding: 10px;
     align-self: flex-end;
     background-color: #db4444;
     color: white;
@@ -193,8 +214,8 @@ button {
 
 /* Footer Section*/
 div.Footer {
-    position: absolute;
-    bottom: 0;
+    /* position: absolute;
+    bottom: 0; */
     width: 100%;
     height: auto;
     display: flex;

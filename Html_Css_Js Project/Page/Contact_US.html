@@ -30,7 +30,7 @@
 
             <!-- Search Container -->
             <div class="search">
-                <input type="text">
+                <input id="searchText" type="text">
                 <i class="fa fa-search" style="font-size: 20px;"></i>
             </div>
 
@@ -85,19 +85,34 @@
             </div>
 
 
-            <div class="feedback">
-                <div class="inputs">
-                    <input id="userName" placeholder="Your Name" type="text" onpaste="return false">
-                    <input id="userEmail" placeholder="Your Email" type="email">
-                    <input id="userPhone" placeholder="Your Phone" type="tel">
+            <form class="feedback" id="myForm">
+
+                <div class="userData">
+                    <div>
+                        <input id="userName" placeholder="Your Name" type="text" onpaste="return false">
+                        <p class="errorMsg">Error</p>
+                    </div>
+
+                    <div>
+                        <input id="userEmail" placeholder="Your Email" type="email">
+                        <p class="errorMsg">Error</p>
+                    </div>
+
+                    <div>
+                        <input id="userPhone" placeholder="Your Phone" type="tel">
+                        <p class="errorMsg">Error</p>
+                    </div>
                 </div>
-                <input id="userMassage" placeholder="Your Massage" type="text">
-                <button id="sendMassage">Send Massage</button>
-            </div>
+                <div class="userMsg">
+                    <input id="userMassage" placeholder="Your Massage" type="text">
+                    <p class="errorMsg">Error</p>
+                </div>
+
+                <input type="submit" id="sendMassage" value="Send Massage">
+            </form>
 
         </div>
-
-
+        <br><br><br><br><br>
     </div>
 
     <!-- Footer Section -->
