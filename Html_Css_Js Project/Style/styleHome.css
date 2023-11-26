@@ -1,6 +1,7 @@
 * {
     margin: 0px;
     padding: 0px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .content {
@@ -67,12 +68,20 @@ div.cartItem .item {
 }
 
 div.cartItem .item i:hover {
-   color: red;
+    color: red;
+    cursor: pointer;
 }
 
 div.cartItems {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+}
+
+.inputRange {
+    text-align: center;
+    outline: none;
+    border: none;
 }
 
 
@@ -345,13 +354,13 @@ div.productContainer button {
     opacity: 0.7;
 }
 
-div.productContainer button:hover {
-    opacity: 1;
-}
+/* div.productContainer button:hover {
+   
+} */
 
 div.productContainer button:active {
     opacity: 1;
-    background-color: red;
+    background-color: #db4444;
 }
 
 
@@ -396,15 +405,15 @@ div.socialIcons {
 }
 
 .icon:hover {
-    display: flex;
+    /* display: flex;
     align-items: center;
     justify-content: center;
     width: 10px;
     height: 10px;
     padding: 10px;
-    border-radius: 50%;
+    border-radius: 50%; */
     background-color: #db4444;
-    margin: 10px;
+    /* margin: 10px; */
 }
 
 .socialIcon {
