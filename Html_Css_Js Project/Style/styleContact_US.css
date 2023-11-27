@@ -8,7 +8,13 @@
     padding-right: 100px;
 }
 
+/*  */
+/*  */
+/*  */
 /* Navbar */
+/*  */
+/*  */
+/*  */
 div.Navbar {
     height: 50px;
     display: flex;
@@ -71,40 +77,38 @@ div.Navbar a:hover {
     color: #db4444;
 }
 
+/*  */
 /* Search Container */
-div.search {
+.search {
     width: 250px;
     display: flex;
     justify-content: center;
-    position: absolute;
-    right: 0;
-    margin-right: 300px;
     background-color: white;
     padding: 2px;
     border-radius: 4px;
     box-shadow: 0px 0px 2px black;
+    align-items: center;
 }
 
-div.search #searchText {
+.search input {
     width: 80%;
     outline: none;
     border: none;
     background-color: white;
+    height: 30px;
 }
 
+/* */
 /* Icons Favorite/Cart */
-div.icons {
+.icons {
+    width: 180px;
     display: flex;
-    justify-content: center;
-    position: absolute;
-    right: 0;
-    margin-right: 100px;
+    justify-content: space-evenly;
+    align-self: flex-end;
 }
 
 i.navbarIcon {
     font-size: 40px;
-    margin-right: 15px;
-    margin-left: 15px;
 }
 
 i.navbarIcon:hover {
@@ -112,7 +116,13 @@ i.navbarIcon:hover {
     color: #db4444;
 }
 
+/*  */
+/*  */
+/*  */
 /* Content */
+/*  */
+/*  */
+/*  */
 div.content {
     display: flex;
     flex-direction: row;
@@ -212,10 +222,14 @@ form.feedback {
     margin: 10px;
 }
 
+/*  */
+/*  */
+/*  */
 /* Footer Section*/
+/*  */
+/*  */
+/*  */
 div.Footer {
-    /* position: absolute;
-    bottom: 0; */
     width: 100%;
     height: auto;
     display: flex;
@@ -287,3 +301,7 @@ div.socialIcons {
     width: 30px;
     height: 30px;
 }
+
+/*  */
+/*  */
+/*  */

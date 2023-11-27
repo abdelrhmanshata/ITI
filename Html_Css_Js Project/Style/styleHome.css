@@ -1,7 +1,6 @@
 * {
     margin: 0px;
     padding: 0px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .content {
@@ -9,8 +8,13 @@
     padding-right: 100px;
 }
 
-
+/*  */
+/*  */
+/*  */
 /* Cart Model */
+/*  */
+/*  */
+/*  */
 .modal {
     display: none;
     position: fixed;
@@ -20,7 +24,7 @@
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 /* Modal Content */
@@ -35,9 +39,9 @@
     overflow: auto;
     border-radius: 10px;
     margin: auto;
-
 }
 
+/*  */
 /* The Close Button */
 i#closeIcon {
     align-self: flex-end;
@@ -51,6 +55,7 @@ i#closeIcon:hover {
     cursor: pointer;
 }
 
+/*  */
 div.cartItem {
     display: flex;
     flex-direction: row;
@@ -84,8 +89,13 @@ div.cartItems {
     border: none;
 }
 
-
+/*  */
+/*  */
+/*  */
 /* Navbar */
+/*  */
+/*  */
+/*  */
 div.Navbar {
     height: 50px;
     display: flex;
@@ -148,18 +158,17 @@ div.Navbar a:hover {
     color: #db4444;
 }
 
+/*  */
 /* Search Container */
 .search {
     width: 250px;
     display: flex;
     justify-content: center;
-    position: absolute;
-    right: 0;
-    margin-right: 300px;
     background-color: white;
     padding: 2px;
     border-radius: 4px;
     box-shadow: 0px 0px 2px black;
+    align-items: center;
 }
 
 .search input {
@@ -167,21 +176,20 @@ div.Navbar a:hover {
     outline: none;
     border: none;
     background-color: white;
+    height: 30px;
 }
 
+/* */
 /* Icons Favorite/Cart */
 .icons {
+    width: 180px;
     display: flex;
-    justify-content: center;
-    position: absolute;
-    right: 0;
-    margin-right: 100px;
+    justify-content: space-evenly;
+    align-self: flex-end;
 }
 
 i.navbarIcon {
     font-size: 40px;
-    margin-right: 15px;
-    margin-left: 15px;
 }
 
 i.navbarIcon:hover {
@@ -189,8 +197,13 @@ i.navbarIcon:hover {
     color: #db4444;
 }
 
+/*  */
+/*  */
+/*  */
 /* Image Slider */
-
+/*  */
+/*  */
+/*  */
 .imageSlider {
     display: flex;
     flex-direction: row;
@@ -234,8 +247,13 @@ i.navbarIcon:hover {
     transition: background-color 0.6s ease;
 }
 
+/*  */
+/*  */
+/*  */
 /* Content */
-
+/*  */
+/*  */
+/*  */
 div.title {
     display: flex;
     flex-direction: row;
@@ -283,8 +301,13 @@ div.categoryContanir div img {
     height: 50px;
     margin-bottom: 10px;
 }
-
+/*  */
+/*  */
+/*  */
 /* categoryProductsContainer */
+/*  */
+/*  */
+/*  */
 div.categoryProductsContainer {
     display: flex;
     flex-direction: column;
@@ -354,17 +377,17 @@ div.productContainer button {
     opacity: 0.7;
 }
 
-/* div.productContainer button:hover {
-   
-} */
-
 div.productContainer button:active {
     opacity: 1;
     background-color: #db4444;
 }
-
-
+/*  */
+/*  */
+/*  */
 /* Footer Section*/
+/*  */
+/*  */
+/*  */
 div.Footer {
     width: 100%;
     height: auto;
@@ -373,6 +396,7 @@ div.Footer {
     background-color: #465052;
     align-items: center;
     justify-content: space-between;
+
 }
 
 div.Footer div p {
@@ -405,15 +429,7 @@ div.socialIcons {
 }
 
 .icon:hover {
-    /* display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 10px;
-    height: 10px;
-    padding: 10px;
-    border-radius: 50%; */
     background-color: #db4444;
-    /* margin: 10px; */
 }
 
 .socialIcon {
@@ -437,3 +453,7 @@ div.socialIcons {
     width: 30px;
     height: 30px;
 }
+/*  */
+/*  */
+/*  */
+/*  */

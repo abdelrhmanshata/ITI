@@ -115,4 +115,8 @@ myForm.addEventListener('submit', function (event) {
     userPhone.value = "";
     userMassage.value = "";
 
+    userName.setAttribute("placeholder", "*Your Name");
+    userEmail.setAttribute("placeholder", "Your Email");
+    userPhone.setAttribute("placeholder", "Your Phone");
+    userMassage.setAttribute("placeholder", "Your Massages");
 });

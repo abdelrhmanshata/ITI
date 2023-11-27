@@ -236,11 +236,13 @@ function createCartItems() {
         var cartItem = document.createElement('div');
         cartItem.className = "cartItem";
 
-        var itemImage = document.createElement('img');
-        itemImage.style.width = "25px";
-        itemImage.style.height = "25px";
-        itemImage.src = cartProduct[i].Product.image;
-
+        var itemImage = document.createElement('div');
+        itemImage.style.display = "flex";
+        itemImage.style.alignItems = "center";
+        itemImage.style.justifyContent = "center";
+        itemImage.style.width = "10%";
+        itemImage.innerHTML = `<img style="width: auto;height: 24px;" src="${cartProduct[i].Product.image}">`;
+       
         var itemName = document.createElement('span');
         itemName.className = "item";
         itemName.innerHTML = cartProduct[i].Product.title;
@@ -458,6 +460,7 @@ function findProductinCart(product) {
 // Calling Function
 // Creates a Dot Of Sliders
 createDots();
+selectedDot(0);
 // autoPlaySlider 
 autoPlay()
 // Select Firts Category By Default
