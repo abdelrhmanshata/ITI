@@ -275,6 +275,19 @@ div.title span {
     font-weight: bold;
     font-size: 18px;
 }
+/* 
+div.containInfo {
+   
+} */
+
+div.containInfo p {
+    text-align: justify;
+}
+
+div.containInfo p i {
+    font-size: 20px;
+    margin-right: 10px;
+}
 
 div.categoryContanir {
     display: flex;
@@ -301,6 +314,7 @@ div.categoryContanir div img {
     height: 50px;
     margin-bottom: 10px;
 }
+
 /*  */
 /*  */
 /*  */
@@ -381,6 +395,7 @@ div.productContainer button:active {
     opacity: 1;
     background-color: #db4444;
 }
+
 /*  */
 /*  */
 /*  */
@@ -453,6 +468,7 @@ div.socialIcons {
     width: 30px;
     height: 30px;
 }
+
 /*  */
 /*  */
 /*  */
