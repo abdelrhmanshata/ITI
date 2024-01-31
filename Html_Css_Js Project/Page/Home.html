@@ -1,227 +1,262 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Beta Shop</title>
-    <link rel="icon" type="image/x-icon" href="../images/logo.ico">
-    <link rel="stylesheet" href="../Style/styleHome.css">
+    <link rel="icon" type="image/x-icon" href="../images/logo.ico" />
+    <link rel="stylesheet" href="../Style/styleHome.css" />
     <!-- Font Awesome Icon Library -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
 
-<body>
-
+  <body>
     <!-- Cart Model -->
     <div id="myModal" class="modal">
-        <!-- Modal content -->
-        <div class="modal-content">
-            <i class="fa fa-close" id="closeIcon"></i>
+      <!-- Modal content -->
+      <div class="modal-content">
+        <i class="fa fa-close" id="closeIcon"></i>
 
-            <div class="cartItem" style="background-color: #db4444;opacity: 0.8;align-items: center;">
-                <span style="width: 10%;text-align: center;color: white;">Image</span>
-                <span class="item" style="color: white;">Product</span>
-                <span class="item" style="color: white;">Quantity</span>
-                <span class="item" style="color: white;">Price</span>
-                <span class="item" style="color: white;">Delete</span>
-            </div>
-
-            <div class="cartItems" id="cartItems"></div>
-
-            <div class="cartItem" style="background-color: #db4444;opacity: 0.8;display: none;" id="totalPriceDiv">
-                <span class="item" style="color: white;width: 35%;font-size: 20px;">Total Price</span>
-                <span class="item" style="color: white;width: 75%;" id="totalPrice"></span>
-            </div>
+        <div
+          class="cartItem"
+          style="background-color: #db4444; opacity: 0.8; align-items: center"
+        >
+          <span style="width: 10%; text-align: center; color: white"
+            >Image</span
+          >
+          <span class="item" style="color: white">Product</span>
+          <span class="item" style="color: white">Quantity</span>
+          <span class="item" style="color: white">Price</span>
+          <span class="item" style="color: white">Delete</span>
         </div>
+
+        <div class="cartItems" id="cartItems"></div>
+
+        <div
+          class="cartItem"
+          style="background-color: #db4444; opacity: 0.8; display: none"
+          id="totalPriceDiv"
+        >
+          <span class="item" style="color: white; width: 35%; font-size: 20px"
+            >Total Price</span
+          >
+          <span
+            class="item"
+            style="color: white; width: 75%"
+            id="totalPrice"
+          ></span>
+        </div>
+      </div>
     </div>
     <!-- Content Section -->
     <div class="content">
-
-        <!-- Navbar -->
-        <div class="Navbar" id="top">
-            <!-- Website Name -->
-            <div class="logo">
-                <img src="../images/logo.png" alt="">
-                <h1>Shop</h1>
-            </div>
-
-            <!-- Navigation between 3 paged -->
-            <div class="links">
-                <a id="homePage" href="./Home.html">Home</a>
-                <a id="aboutPage" href="./About.html">About</a>
-                <a id="contactPage" href="./Contact_US.html">Contact US</a>
-            </div>
-
-            <!-- Search Container -->
-            <div class="search">
-                <input type="text" placeholder="Search...">
-                <i class="fa fa-search" style="font-size: 20px;"></i>
-            </div>
-
-            <!-- Icons Favorite/Cart  -->
-            <div class="icons">
-                <i class="fa fa-heart navbarIcon"></i>
-                <i class="fa fa-shopping-cart navbarIcon" id="cartIcon"></i>
-                <i class="fa fa-user-circle-o navbarIcon"></i>
-            </div>
+      <!-- Navbar -->
+      <div class="Navbar" id="top">
+        <!-- Website Name -->
+        <div class="logo">
+          <img src="../images/logo.png" alt="" />
+          <h1>Shop</h1>
         </div>
 
-        <br>
-        <hr>
-        <br>
-
-        <!-- Image Slider -->
-        <div class="imageSlider">
-            <img src="../images/icons/left-arrow.png" alt="left-arrow" class="arrow" onclick="previous()">
-            <img id="image" src="../images/slider/sliderImage1.jpg" alt="image">
-            <img src="../images/icons/right-arrow.png" alt="right-arrow" class="arrow" onclick="next()">
-        </div>
-        <!-- The dots/circles -->
-        <div id="dots" style="text-align:center"></div>
-
-        <br>
-        <hr>
-        <br>
-
-        <!-- Contain some info about Products  -->
-        <div class="title">
-            <div id="startPoint"></div>
-            <span>Information</span>
-        </div>
-        <br>
-        <h2>Info about Products</h2>
-        <br>
-        <div class="containInfo">
-            <p>
-                <i class="fa fa-hand-o-right"></i>
-                The product section on our e-commerce electronic website is meticulously designed to offer users a
-                seamless and informative shopping experience. From featured products that showcase the latest and most
-                popular items to well-organized product categories spanning electronics, home appliances, gadgets,
-                wearables, cameras, and audio devices, our platform ensures easy navigation for users seeking a diverse
-                range of electronic solutions.
-            </p>
-            <br>
-            <p>
-                <i class="fa fa-hand-o-right"></i>
-                Within each product category, our product listings present users with key information such as vivid
-                product images, names, prices, brief descriptions, and customer ratings. Clicking on a product opens up
-                a detailed page where users can explore larger images, comprehensive descriptions, technical
-                specifications, customer reviews, and the option to add the product to their cart or make an immediate
-                purchase.
-            </p>
-            <br>
-            <p>
-                <i class="fa fa-hand-o-right"></i>
-                To further assist users in their product search, our platform incorporates filter and sorting options,
-                allowing for refined searches based on criteria like price range, brand, and ratings. Users can also
-                compare multiple products, aiding them in making well-informed decisions. The "Related Products" section
-                suggests complementary items, fostering a more comprehensive shopping experience.
-            </p>
+        <!-- Navigation between 3 paged -->
+        <div class="links">
+          <a id="homePage" href="./Home.html">Home</a>
+          <a id="aboutPage" href="./About.html">About</a>
+          <a id="contactPage" href="./Contact_US.html">Contact US</a>
         </div>
 
-        <br>
-        <hr>
-        <br>
+        <!-- Search Container -->
+        <div class="search">
+          <input type="text" placeholder="Search..." />
+          <i class="fa fa-search" style="font-size: 20px"></i>
+        </div>
 
-        <!-- Categories  -->
-        <div class="title">
-            <div id="startPoint"></div>
-            <span>Categories</span>
+        <!-- Icons Favorite/Cart  -->
+        <div class="icons">
+          <i class="fa fa-heart navbarIcon"></i>
+          <i class="fa fa-shopping-cart navbarIcon" id="cartIcon"></i>
+          <i class="fa fa-user-circle-o navbarIcon"></i>
         </div>
-        <br>
-        <h2>Browse By Category</h2>
-        <br>
-        <div class="categoryContanir">
-            <div class="category" id="0">
-                <img src="../images/icons/smartphone.png" alt="smartphone">
-                <span>Phones</span>
-            </div>
-            <div class="category" id="1">
-                <img src="../images/icons/computers.png" alt="computers">
-                <span>Computers</span>
-            </div>
-            <div class="category" id="2">
-                <img src="../images/icons/smart-watch.png" alt="smart-watch">
-                <span>SmartWatch</span>
-            </div>
-            <div class="category" id="3">
-                <img src="../images/icons/camera.png" alt="camera">
-                <span>Camera</span>
-            </div>
-            <div class="category" id="4">
-                <img src="../images/icons/earphones.png" alt="earphones">
-                <span>HeadPhones</span>
-            </div>
+      </div>
+
+      <br />
+      <hr />
+      <br />
+
+      <!-- Image Slider -->
+      <div class="imageSlider">
+        <img
+          src="../images/icons/left-arrow.png"
+          alt="left-arrow"
+          class="arrow"
+          onclick="previous()"
+        />
+        <img id="image" src="../images/slider/sliderImage1.jpg" alt="image" />
+        <img
+          src="../images/icons/right-arrow.png"
+          alt="right-arrow"
+          class="arrow"
+          onclick="next()"
+        />
+      </div>
+      <!-- The dots/circles -->
+      <div id="dots" style="text-align: center"></div>
+
+      <br />
+      <hr />
+      <br />
+
+      <!-- Contain some info about Products  -->
+      <div class="title">
+        <div id="startPoint"></div>
+        <span>Information</span>
+      </div>
+      <br />
+      <h2>Info about Products</h2>
+      <br />
+      <div class="containInfo">
+        <p>
+          <i class="fa fa-hand-o-right"></i>
+          The product section on our e-commerce electronic website is
+          meticulously designed to offer users a seamless and informative
+          shopping experience. From featured products that showcase the latest
+          and most popular items to well-organized product categories spanning
+          electronics, home appliances, gadgets, wearables, cameras, and audio
+          devices, our platform ensures easy navigation for users seeking a
+          diverse range of electronic solutions.
+        </p>
+        <br />
+        <p>
+          <i class="fa fa-hand-o-right"></i>
+          Within each product category, our product listings present users with
+          key information such as vivid product images, names, prices, brief
+          descriptions, and customer ratings. Clicking on a product opens up a
+          detailed page where users can explore larger images, comprehensive
+          descriptions, technical specifications, customer reviews, and the
+          option to add the product to their cart or make an immediate purchase.
+        </p>
+        <br />
+        <p>
+          <i class="fa fa-hand-o-right"></i>
+          To further assist users in their product search, our platform
+          incorporates filter and sorting options, allowing for refined searches
+          based on criteria like price range, brand, and ratings. Users can also
+          compare multiple products, aiding them in making well-informed
+          decisions. The "Related Products" section suggests complementary
+          items, fostering a more comprehensive shopping experience.
+        </p>
+      </div>
+
+      <br />
+      <hr />
+      <br />
+
+      <!-- Categories  -->
+      <div class="title">
+        <div id="startPoint"></div>
+        <span>Categories</span>
+      </div>
+      <br />
+      <h2>Browse By Category</h2>
+      <br />
+      <div class="categoryContanir">
+        <div class="category" id="0">
+          <img src="../images/icons/smartphone.png" alt="smartphone" />
+          <span>Phones</span>
         </div>
-        <br>
-        <br>
-        <div class="categoryProductsContainer">
-            <div class="Products" id="Products">
-            </div>
+        <div class="category" id="1">
+          <img src="../images/icons/computers.png" alt="computers" />
+          <span>Computers</span>
         </div>
+        <div class="category" id="2">
+          <img src="../images/icons/smart-watch.png" alt="smart-watch" />
+          <span>SmartWatch</span>
+        </div>
+        <div class="category" id="3">
+          <img src="../images/icons/camera.png" alt="camera" />
+          <span>Camera</span>
+        </div>
+        <div class="category" id="4">
+          <img src="../images/icons/earphones.png" alt="earphones" />
+          <span>HeadPhones</span>
+        </div>
+      </div>
+      <br />
+      <br />
+      <div class="categoryProductsContainer">
+        <div class="Products" id="Products"></div>
+      </div>
     </div>
-    <br><br>
+    <br /><br />
     <!-- Footer Section -->
     <div class="Footer">
-        <div>
-            <a id="contactPage" href="./Contact_US.html" style="text-decoration: none;">
-                <p>Contact Us</p>
+      <div>
+        <a
+          id="contactPage"
+          href="./Contact_US.html"
+          style="text-decoration: none"
+        >
+          <p>Contact Us</p>
+        </a>
+        <div class="socialIcons">
+          <div class="icon">
+            <a href="https://www.facebook.com/abdo.shata.520/" target="_blank">
+              <i class="fa fa-facebook socialIcon"></i>
             </a>
-            <div class="socialIcons">
+          </div>
 
-                <div class="icon">
-                    <a href="https://www.facebook.com/abdo.shata.520/" target="_blank">
-                        <i class="fa fa-facebook socialIcon"></i>
-                    </a>
-                </div>
+          <div class="icon">
+            <a href="https://twitter.com/" target="_blank">
+              <i class="fa fa-twitter socialIcon"></i>
+            </a>
+          </div>
 
-                <div class="icon">
-                    <a href="https://twitter.com/" target="_blank">
-                        <i class="fa fa-twitter socialIcon"></i>
-                    </a>
-                </div>
+          <div class="icon">
+            <a href="https://www.instagram.com/" target="_blank">
+              <i class="fa fa-instagram socialIcon"></i>
+            </a>
+          </div>
 
-                <div class="icon">
-                    <a href="https://www.instagram.com/" target="_blank">
-                        <i class="fa fa-instagram socialIcon"></i>
-                    </a>
-                </div>
+          <div class="icon">
+            <a href="https://wa.me/2001207202456" target="_blank">
+              <i class="fa fa-whatsapp socialIcon"></i>
+            </a>
+          </div>
 
-                <div class="icon">
-                    <a href="https://wa.me/2001207202456" target="_blank">
-                        <i class="fa fa-whatsapp socialIcon"></i>
-                    </a>
-                </div>
+          <div class="icon">
+            <a href="tel:01207202456" target="_blank">
+              <i class="fa fa-phone socialIcon"></i>
+            </a>
+          </div>
 
-                <div class="icon">
-                    <a href="tel:01207202456" target="_blank">
-                        <i class="fa fa-phone socialIcon"></i>
-                    </a>
-                </div>
-
-                <div class="icon">
-                    <a href="mailto:abdelrhmanmohamedshata@gmail.com?subject=Rate the site&body=This is beautiful website"
-                        target="_blank">
-                        <i class="fa fa-google socialIcon"></i>
-                    </a>
-                </div>
-            </div>
+          <div class="icon">
+            <a
+              href="mailto:abdelrhmanmohamedshata@gmail.com?subject=Rate the site&body=This is beautiful website"
+              target="_blank"
+            >
+              <i class="fa fa-google socialIcon"></i>
+            </a>
+          </div>
         </div>
+      </div>
 
-        <div class="copyright">
-            <i class="fa fa-copyright"></i>
-            <p>2023 Shata theme. Powered by AbdElrhman</p>
+      <div class="copyright">
+        <i class="fa fa-copyright"></i>
+        <p>2023 Shata theme. Powered by AbdElrhman</p>
+      </div>
+      <div class="topIcon">
+        <div class="icon">
+          <a href="#top"
+            ><i class="fa fa-arrow-up socialIcon" style="font-size: 20px"></i
+          ></a>
         </div>
-        <div class="topIcon">
-            <div class="icon">
-                <a href="#top"><i class="fa fa-arrow-up socialIcon" style="font-size: 20px;"></i></a>
-            </div>
-        </div>
+      </div>
     </div>
 
     <!-- script code js  -->
     <script src="../Code/codeHome.js"></script>
-</body>
-
+  </body>
 </html>
