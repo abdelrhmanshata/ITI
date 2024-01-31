@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tracks List</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/styles.css' %}"
+    />
+    <link rel="stylesheet" src="{% static 'bootstrap/css/bootstrap.css' %}" />
+  </head>
+  <body>
+    <div class="container">
+      <div style="display: flex; align-items: center">
+        <img width="100px" height="100px" src="{% static 'images/iot.png' %}" />
+        <h1>Tracks List</h1>
+      </div>
+      <table width="100%" border="1" class="table table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Details</th>
+            <th>Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for track in tracks %}
+          <tr>
+            <th>{{track.id}}</th>
+            <th>{{track.Name}}</th>
+            <th><a href="/tracks/{{track.id}}">Show Details</a></th>
+            <th><a href="{% url 'track_details' track.id %}">Show Details</a></th>
+          </tr>
+          {%endfor%}
+        </tbody>
+      </table>
+    </div>
+    <script src="{%static 'bootstrap/js/bootstrap.js'%}" />
+  </body>
+</html>
