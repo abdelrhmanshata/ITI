@@ -314,17 +314,27 @@ def productUpdate(request, productID):
             pImage = "images/products/earphone5.png"
             pCategoryImage = "images/category/earphones.png"
 
-        product = get_object_or_404(Products, id=productID)
-        # Update the fields
-        product.image = pImage
-        product.title = pTitle
-        product.description = pDescription
-        product.rating = pRating
-        product.price = pPrice
-        product.category = pCategory
-        product.categoryImage = pCategoryImage
-        # Save the changes
-        product.save()
+        Products.objects.filter(id=productID).update(
+            image=pImage,
+            title=pTitle,
+            description=pDescription,
+            rating=pRating,
+            price=pPrice,
+            category=pCategory,
+            categoryImage=pCategoryImage,
+        )
+
+        # product = get_object_or_404(Products, id=productID)
+        # # Update the fields
+        # product.image = pImage
+        # product.title = pTitle
+        # product.description = pDescription
+        # product.rating = pRating
+        # product.price = pPrice
+        # product.category = pCategory
+        # product.categoryImage = pCategoryImage
+        # # Save the changes
+        # product.save()
         return HttpResponseRedirect("/")
 
     else:

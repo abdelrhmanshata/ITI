@@ -36,7 +36,7 @@
           <th>
             <a href="{% url 'deleteProduct' product.id %}"><i class="fa-solid fa-trash" style="color: red;font-size: x-large;"></i></a>
           </th>
-        </tr>
+        {% comment %} </tr> {% endcomment %}
       {% endfor %}
     </tbody>
   </table>
