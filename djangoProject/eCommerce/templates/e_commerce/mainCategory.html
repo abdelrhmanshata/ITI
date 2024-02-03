@@ -1,0 +1,44 @@
+{% extends 'e_commerce/main.html' %}
+{% load static %}
+{% block myContent %}
+  <!-- Table -->
+  <br />
+  <div style="display: flex; align-items: center; margin: 10px">
+    <img width="50px" height="50px" src="{% static 'images/product.png' %}" style="marker: 10px" />
+    <h1 style="margin-left: 10px">Products List</h1>
+  </div>
+
+  <table width="100%" border="1" class="table table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Image</th>
+        <th>Title</th>
+        <th>Category</th>
+        <th>CategoryImage</th>
+        <th>More</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for product in productsList %}
+        <tr>
+          <th>{{ product.id }}</th>
+          <th>
+            <img width="50px" height="50px" src="{% static product.image %}" style="margin: 5px" />
+          </th>
+          <th>{{ product.title }}</th>
+          <th>{{ product.category }}</th>
+          <th>
+            <img width="50px" height="50px" src="{% static product.categoryImage %}" style="margin: 5px" />
+          </th>
+
+          <th>
+            <a href="{% url 'product-details' product.id %}">Show Details</a>
+          </th>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <br />
+  <br />
+{% endblock %}

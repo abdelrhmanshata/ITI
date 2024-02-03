@@ -131,21 +131,25 @@ productsList = [
 def products(request):
     context = {}
     context["productsList"] = productsList
-    return render(request, "e_commerce/products.html", context)
+    return render(request, "e_commerce/mainProducts.html", context)
+    # return render(request, "e_commerce/products.html", context)
 
 
 def productDetails(request, productID):
     context = {}
     product = filter(lambda t: t["id"] == productID, productsList)
     context["product"] = list(product)
-    return render(request, "e_commerce/details_product.html", context)
+    return render(request, "e_commerce/mainDetailsProduct.html", context)
+    # return render(request, "e_commerce/details_product.html", context)
 
 
 def category(request):
     context = {}
     context["productsList"] = productsList
-    return render(request, "e_commerce/category.html", context)
+    return render(request, "e_commerce/mainCategory.html", context)
+    # return render(request, "e_commerce/category.html", context)
 
 
 def aboutUS(request):
-    return render(request, "e_commerce/aboutUs.html")
+    return render(request, "e_commerce/mainAboutUs.html")
+    # return render(request, "e_commerce/aboutUs.html")

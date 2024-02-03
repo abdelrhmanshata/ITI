@@ -1,0 +1,77 @@
+{% extends 'ecommerce_db/main.html' %}
+{% load static %}
+{% block myContent %}
+  <!-- Table -->
+  <br />
+  <div style="display: flex; align-items: center; margin: 10px">
+    <img width="50px" height="50px" src="{% static 'images/product.png' %}" style="marker: 10px" />
+    <h1 style="margin-left: 10px">Update Product</h1>
+  </div>
+
+  <div style="display: flex; align-self: center; justify-content: center">
+    <div style=" background-color: white;border-radius: 10px; box-shadow: 0px 0px 8px gray;margin: 10px; padding: 5px;">
+      <form method="post">
+        {% csrf_token %} <!-- Use this if you're working with Django to protect against Cross-Site Request Forgery (CSRF) -->
+        <table>
+          <tbody>
+            <tr>
+              <th>
+                <label>Title :</label>
+              </th>
+              <th>
+                <input style="width: auto" type="text" name="title" value="{{ product.title }}" />
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <label>Description :</label>
+              </th>
+              <th>
+                <input style="width: auto" type="text" name="description" value="{{ product.description }}" />
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <label>Rating :</label>
+              </th>
+              <th>
+                <input type="number" id="rating" name="rating" min="1" max="5" value="{{ product.rating }}" />
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <label>Price :</label>
+              </th>
+              <th>
+                <input type="number" id="price" name="price" min="0" value="{{ product.price }}" />
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <label>Category :</label>
+              </th>
+              <th>
+                <select name="category" id="category">
+                  <option value="phone">Phone</option>
+                  <option value="smartwatch">Smartwatch</option>
+                  <option value="earphone">Earphone</option>
+                </select>
+              </th>
+            </tr>
+          </tbody>
+        </table>
+        <div style="display: flex;align-items: center;justify-content: center;margin-top: 10px;">
+          <input style="color:white; background-color: cornflowerblue; padding: 5px; border-radius: 10px;" type="submit" value="Update Product" />
+        </div>
+      </form>
+    </div>
+  </div>
+  <br />
+  <br />
+  <br />
+
+  <script>
+    var defualtValue = '{{ product.category }}'
+    document.getElementById('category').value = defualtValue
+  </script>
+{% endblock %}

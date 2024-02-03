@@ -1,0 +1,44 @@
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beta Shop</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}" />
+    <link rel="icon" type="image/x-icon" href="{% static 'images/logo.ico' %}" />
+    <!-- Other head elements -->
+    <link rel="stylesheet" href="{% static 'css/all.min.css' %}" />
+  </head>
+  <body>
+    <!-- Content Section -->
+    <div class="content">
+      <!-- Navbar -->
+      <div class="Navbar" id="top">
+        <!-- Website Name -->
+        <div class="logo">
+          <img src="{% static 'images/logo.png' %}" alt="" />
+          <h1>ShopDB</h1>
+        </div>
+        <!-- Navigation between 3 paged -->
+        <div class="links">
+          <a id="homePage" href="{% url 'Products' %}">Products</a>
+          <a id="aboutPage" href="{% url 'category' %}">Category</a>
+          <a id="contactPage" href="{% url 'aboutUS' %}">About US</a>
+          <div style="position: absolute; right: 0; background-color: cornflowerblue; padding: 5px; border-radius: 10px;">
+            <a id="contactPage" href="{% url 'addProduct' %}"><i class="fa-solid fa-circle-plus"></i> Add New</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Content -->
+      {% block myContent %}
+        {% comment %}content{% endcomment %}
+      {% endblock %}
+    </div>
+  </body>
+</html>
