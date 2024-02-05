@@ -38,9 +38,9 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "testApp.apps.TestappConfig",  # "testApp",
-    "eCommerce.apps.EcommerceConfig",  # "eCommerce",
-    "ecommerce_db.apps.EcommerceDbConfig",  # "ecommerce_db",
+    # "testApp.apps.TestappConfig",  # "testApp",
+    # "eCommerce.apps.EcommerceConfig",  # "eCommerce",
+    # "ecommerce_db.apps.EcommerceDbConfig",  # "ecommerce_db",
     "ecommerce_db_2.apps.EcommerceDb2Config",  # "ecommerce_db2",
     "bootstrap5",
 ]
@@ -132,7 +132,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 STATIC_URL = "/static/"
-MEDIA_URL='media/'
+MEDIA_URL = "media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, MEDIA_URL)
 # STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 # Default primary key field type
