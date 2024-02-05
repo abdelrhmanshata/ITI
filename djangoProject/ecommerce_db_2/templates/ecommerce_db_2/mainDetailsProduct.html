@@ -1,0 +1,15 @@
+{% extends 'ecommerce_db_2/main.html' %}
+{% load static %}
+{% block myContent %}
+  <!-- Products Details -->
+  <br />
+  <div style="display: flex; align-self: center; justify-content: center">
+    <div class="productContainer">
+      <img src="{{ product.getImageUrl }}" alt="" />
+      <span>{{ product.title }}</span>
+      <p>{{ product.description }}</p>
+      <span>Price : {{ product.price }} $</span>
+      <button class="addCartButton">Done</button>
+    </div>
+  </div>
+{% endblock %}

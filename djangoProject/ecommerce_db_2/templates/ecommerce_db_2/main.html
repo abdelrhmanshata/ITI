@@ -1,0 +1,63 @@
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beta Shop</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'images/logo.ico' %}" />
+    <!-- Other head elements -->
+    <link rel="stylesheet" href="{% static 'css/all.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+  </head>
+  <style>
+    .endNav {
+      display: flex;
+      gap: 10px;
+      position: absolute;
+      right: 0;
+    }
+    .addButton {
+      padding: 5px;
+      border-radius: 10px;
+    }
+  </style>
+
+  <body>
+    <!-- Content Section -->
+    <div class="content">
+      <!-- Navbar -->
+      <div class="Navbar" id="top">
+        <!-- Website Name -->
+        <div class="logo">
+          <img src="{% static 'images/logo.png' %}" alt="" />
+          <h1>ShopDB2</h1>
+        </div>
+        <!-- Navigation between 3 paged -->
+        <div class="links">
+          <a id="homePage" href="{% url 'Products' %}">Products</a>
+          <a id="aboutPage" href="{% url 'category' %}">Category</a>
+          <a id="contactPage" href="{% url 'aboutUS' %}">About US</a>
+
+          <div class="endNav">
+            <div class="addButton" style="background-color: cornflowerblue;">
+              <a id="contactPage" href="{% url 'addNewProduct' %}"><i class="fa-solid fa-circle-plus"></i> Add New Product</a>
+            </div>
+            <div class="addButton" style="background-color: orange;">
+              <a id="contactPage" href="{% url 'addNewCategory' %}"><i class="fa-solid fa-circle-plus"></i> Add New Category</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Content -->
+      {% block myContent %}
+        {% comment %}content{% endcomment %}
+      {% endblock %}
+    </div>
+  </body>
+</html>

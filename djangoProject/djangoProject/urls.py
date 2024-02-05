@@ -18,14 +18,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, re_path, include
 
-# from eCommerce import views
-
-
-# from testApp import views
+from .settings import *
+from django.conf.urls.static import static
 
 urlpatterns = [
     # path('prefix url',view,name=sdd)
     path("admin/", admin.site.urls),
     # path("", include("eCommerce.urls")),
-    path("", include("ecommerce_db.urls")),
-]
+    # path("", include("ecommerce_db.urls")),
+    path("", include("ecommerce_db_2.urls")),
+] + static(MEDIA_URL, document_root=MEDIA_ROOT)
