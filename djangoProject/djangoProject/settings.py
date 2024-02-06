@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     "accounts.apps.AccountsConfig",  # "accounts",
     "ecommerce_db_auth.apps.EcommerceDbAuthConfig",  # "ecommerce_db_auth",
     "bootstrap5",
+    "rest_framework",
 ]
 
 MIDDLEWARE = [

@@ -7,6 +7,5 @@ from django.urls import path, re_path, include
 urlpatterns = [
     path("", include("django.contrib.auth.urls")),
     path("profile/", views.myProfile, name="myProfile"),
-    path("logout/", views.myLogout, name="myLogout"),
     path("register/", myRegistration.as_view(), name="myRegistration"),
 ]

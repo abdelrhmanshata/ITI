@@ -1,0 +1,43 @@
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    div.productContainer {
+      width: 400px;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0px 0px 8px gray;
+      margin: 10px;
+      padding: 5px;
+    }
+    form {
+      width: 300px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+  </style>
+  <body>
+    <div style="display: flex; align-items: center; justify-content: center;">
+      <div class="productContainer">
+        <a href="{% url 'login' %}">Login</a>
+      </div>
+    </div>
+  </body>
+</html>

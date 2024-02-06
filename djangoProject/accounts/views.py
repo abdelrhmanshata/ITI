@@ -7,13 +7,13 @@ from django.urls import reverse_lazy
 
 
 # Create your views here.
-def myLogin(request):
-    context = {"form": authenticate()}
-    return render(request, "registration/login.html", context)
+# def myLogin(request):
+#     context = {"form": authenticate()}
+#     return render(request, "registration/login.html", context)
 
 
-def myLogout(request):
-    return render(request, "registration/logout.html")
+# def myLogout(request):
+#     return render(request, "registration/logout.html")
 
 
 def myProfile(request):

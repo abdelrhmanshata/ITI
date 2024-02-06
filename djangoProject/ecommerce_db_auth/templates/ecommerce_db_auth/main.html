@@ -46,7 +46,7 @@
             </div>
             {% if user.id %}
               <div class="addButton" style="background-color: red;">
-                <form method="post" action="{% url 'myLogout' %}">
+                <form method="post" action="{% url 'logout' %}">
                   {% csrf_token %}
                   <button type="submit" style="font-size:20px;border: none;background: none;">Logout</button>
                 </form>

@@ -28,6 +28,6 @@ urlpatterns = [
     # path("", include("ecommerce_db.urls")),
     # path("", include("ecommerce_db_2.urls")),
     path("", include("ecommerce_db_auth.urls")),
-    
     path("accounts/", include("accounts.urls")),
+    path("Category/API/", include("ecommerce_db_auth.api.urls")),
 ] + static(MEDIA_URL, document_root=MEDIA_ROOT)
