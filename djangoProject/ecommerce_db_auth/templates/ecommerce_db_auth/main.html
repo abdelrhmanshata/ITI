@@ -1,0 +1,69 @@
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beta Shop</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'images/logo.ico' %}" />
+    <!-- Other head elements -->
+    <link rel="stylesheet" href="{% static 'css/all.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/authstyles.css' %}" />
+  </head>
+
+  <body>
+    <!-- Content Section -->
+    <div class="content">
+      {% if user.id %}
+        <h1 style="text-align: center; font-weight: bold;">Welcome : {{ user }}</h1>
+      {% endif %}
+      <!-- Navbar -->
+      <div class="Navbar" id="top">
+        <!-- Website Name -->
+        <div class="logo">
+          <img src="{% static 'images/logo.png' %}" alt="" />
+          <h1>Shop DB Auth</h1>
+        </div>
+        <!-- Navigation between 3 paged -->
+        <div class="links">
+          <a id="homePage" href="{% url 'Products' %}">Products</a>
+          <a id="aboutPage" href="{% url 'category' %}">Category</a>
+          <a id="contactPage" href="{% url 'aboutUS' %}">About US</a>
+
+          <div class="endNav">
+            <div class="addButton" style="background-color: cornflowerblue;">
+              <a id="contactPage" href="{% url 'addNewProduct' %}"><i class="fa-solid fa-circle-plus"></i> Add Product</a>
+            </div>
+            <div class="addButton" style="background-color: orange;">
+              <a id="contactPage" href="{% url 'addNewCategory' %}"><i class="fa-solid fa-circle-plus"></i> Add Category</a>
+            </div>
+            <div class="addButton" style="background-color: green;">
+              <a id="contactPage" href="{% url 'myRegistration' %}"><i class="fa-solid fa-user"></i> Register</a>
+            </div>
+            {% if user.id %}
+              <div class="addButton" style="background-color: red;">
+                <form method="post" action="{% url 'myLogout' %}">
+                  {% csrf_token %}
+                  <button type="submit" style="font-size:20px;border: none;background: none;">Logout</button>
+                </form>
+              </div>
+            {% else %}
+              <div class="addButton" style="background-color: cyan;">
+                <a id="contactPage" href="{% url 'login' %}"><i class="fa-solid fa-user"></i>Login</a>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+
+      <!-- Content -->
+      {% block myContent %}
+        {% comment %}content{% endcomment %}
+      {% endblock %}
+    </div>
+  </body>
+</html>

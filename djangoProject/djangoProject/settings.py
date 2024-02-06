@@ -41,7 +41,9 @@ INSTALLED_APPS = [
     # "testApp.apps.TestappConfig",  # "testApp",
     # "eCommerce.apps.EcommerceConfig",  # "eCommerce",
     # "ecommerce_db.apps.EcommerceDbConfig",  # "ecommerce_db",
-    "ecommerce_db_2.apps.EcommerceDb2Config",  # "ecommerce_db2",
+    # "ecommerce_db_2.apps.EcommerceDb2Config",  # "ecommerce_db_2",
+    "accounts.apps.AccountsConfig",  # "accounts",
+    "ecommerce_db_auth.apps.EcommerceDbAuthConfig",  # "ecommerce_db_auth",
     "bootstrap5",
 ]
 
@@ -60,7 +62,7 @@ ROOT_URLCONF = "djangoProject.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [BASE_DIR / "templates/"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [

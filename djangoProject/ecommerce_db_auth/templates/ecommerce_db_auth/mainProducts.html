@@ -1,0 +1,46 @@
+{% extends 'ecommerce_db_auth/main.html' %}
+{% load static %}
+{% block myContent %}
+  <!-- Table -->
+  <br />
+  <div style="display: flex; align-items: center; margin: 10px">
+    <img width="50px" height="50px" src="{% static 'images/product.png' %}" style="marker: 10px" />
+    <h1 style="margin-left: 10px">Products List Auth</h1>
+  </div>
+
+  <table width="100%" border="1" class="table table-striped">
+    <thead>
+      <tr>
+        <th style=" text-align: center;">ID</th>
+        <th style=" text-align: center;">Image</th>
+        <th style=" text-align: center;">Title</th>
+        <th style=" text-align: center;">Details</th>
+        <th colspan="3" style=" text-align: center;">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for product in productsList %}
+        <tr style=" text-align: center; vertical-align: middle;">
+          <th>{{ product.id }}</th>
+          <th>
+            <img width="50px" height="50px" src="{{ product.getImageUrl }}" style="margin: 5px" />
+          </th>
+          <th>{{ product.title }}</th>
+          <th>{{ product.description }}</th>
+          <th>
+            <a href="{% url 'product-details' product.id %}"><i class="fa-solid fa-circle-info" style="font-size: x-large;"></i></a>
+          </th>
+          <th>
+            <a href="{% url 'product-update' product.id %}"><i class="fa-solid fa-pen-to-square" style="color: green;font-size: x-large;"></i></a>
+          </th>
+          <th>
+            <a href="{% url 'deleteProduct' product.id %}"><i class="fa-solid fa-trash" style="color: red;font-size: x-large;"></i></a>
+          </th>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <br />
+  <br />
+  <br />
+{% endblock %}

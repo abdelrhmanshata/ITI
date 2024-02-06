@@ -1,0 +1,21 @@
+{% extends 'ecommerce_db_auth/main.html' %}
+{% load static %}
+{% block myContent %}
+  <!-- Products Details -->
+  <br />
+  <div style="display: flex; align-self: center; justify-content: center">
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div class="productContainer">
+        <p>Delete This Product?</p>
+
+        <img src="{{ product.getImageUrl }}" alt="" />
+        <span>{{ product.title }}</span>
+        <p>{{ product.description }}</p>
+        <span>Price : {{ product.price }} $</span>
+        <input class="addCartButton" type="submit" value="Are You Sure ?" />
+        <a class="addCartButton" style=" background-color: gray;text-decoration: none; text-align: center;" href="{% url 'Products' %}">Cancel</a>
+      </div>
+    </form>
+  </div>
+{% endblock %}

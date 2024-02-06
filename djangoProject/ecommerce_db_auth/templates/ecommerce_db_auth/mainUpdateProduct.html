@@ -1,0 +1,27 @@
+{% extends 'ecommerce_db_auth/main.html' %}
+{% load static %}
+{% block myContent %}
+  <!-- Table -->
+  <br />
+  <div style="display: flex; align-items: center; margin: 10px">
+    <img width="50px" height="50px" src="{% static 'images/product.png' %}" style="marker: 10px" />
+    <h1 style="margin-left: 10px">Update Product Auth</h1>
+  </div>
+
+  <div style="display: flex; align-self: center; justify-content: center">
+    <div style=" background-color: white;border-radius: 10px; box-shadow: 0px 0px 8px gray;margin: 10px; padding: 5px;">
+      <form method="post" enctype="multipart/form-data">
+        {% csrf_token %} <!-- Use this if you're working with Django to protect against Cross-Site Request Forgery (CSRF) -->
+        <div style="display: flex;flex-direction: column;">
+          <img width="50px" height="50px" src="{{ form.instance.getImageUrl }}" style="margin: 5px" />
+          {{ form }}
+        </div>
+        <div style="display: flex;align-items: center;justify-content: center;margin-top: 10px;">
+          <input style="color:white; background-color: cornflowerblue; padding: 5px; border-radius: 10px;" type="submit" value="Update Product" />
+        </div>
+      </form>
+    </div>
+    <div style="color: red;">{{ MSG }}</div>
+  </div>
+  <br />
+{% endblock %}
