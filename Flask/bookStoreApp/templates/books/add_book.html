@@ -1,0 +1,38 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+  <div>
+    <div class="text-center">
+      <h1>Add Book</h1>
+    </div>
+    <br /><br />
+    <form action="{{ url_for('book.add') }}" method="POST" enctype="multipart/form-data">
+      <div class="mb-3">
+        <label class="form-label">Title</label>
+        <input class="form-control" type="text" name="title" aria-label="default input example" required />
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Details</label>
+        <textarea class="form-control" name="details" id="exampleFormControlTextarea1" rows="3" required></textarea>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Num Of Page</label>
+        <input class="form-control" type="number" name="pages" aria-label="default input example" required />
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Price</label>
+        <div class="input-group mb-3">
+          <input type="number" class="form-control" name="price" aria-label="Amount (to the nearest dollar)" required />
+          <span class="input-group-text">$</span>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="formFile" class="form-label">Image</label>
+        <input class="form-control" type="file" id="formFile" name="image" accept="image/*" required />
+      </div>
+      <div class="mb-3 text-center">
+        <button type="submit" class="btn btn-primary" style="width: 150px;">Save</button>
+      </div>
+    </form>
+  </div>
+{% endblock %}

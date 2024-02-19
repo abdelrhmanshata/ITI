@@ -1,0 +1,12 @@
+virtualenv venv
+venv\Scripts\activate
+
+pip freeze
+pip install flask
+pip install flask-shell-ipython
+pip install -U Flask-SQLAlchemy
+
+pip install Flask-Migrate
+flask db init
+flask db migrate -m "Initial migration"
+flask db upgrade

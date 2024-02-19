@@ -1,0 +1,46 @@
+{% extends 'layouts/base.html' %}
+{% block title %}
+  Show
+{% endblock %}
+
+{% block content %}
+  <div class="text-center">
+    <h1>Book Details</h1>
+  </div>
+  <br /><br />
+  <div class="d-flex align-items-center justify-content-center">
+    <div class="card d-flex flex-row p-2 align-items-center justify-content-center">
+      <div class="d-flex" style="width: 500px;height: 100%">
+        <img width="150" height="200" src="{{ url_for('static', filename = 'bookImages/' + book.image) }}" class="card-img-top" alt="..." />
+      </div>
+      <table class="table table-striped-columns m-2">
+        <tbody>
+          <tr>
+            <th>Title :</th>
+            <td>{{ book.title }}</td>
+          </tr>
+          <tr>
+            <th>Details :</th>
+            <td>{{ book.details }}</td>
+          </tr>
+          <tr>
+            <th style="width: 150px;">Num Of Page :</th>
+            <td>{{ book.pages }}</td>
+          </tr>
+          <tr>
+            <th>Price :</th>
+            <td>{{ book.price }} $</td>
+          </tr>
+          <tr>
+            <th>Create At :</th>
+            <td>{{ book.created_at }}</td>
+          </tr>
+          <tr>
+            <th>Update At :</th>
+            <td>{{ book.update_at }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'layouts/base.html' %}
+{% block title %}
+  Error
+{% endblock %}
+{% block content %}
+  <div class="text-center">
+    <h1>Error</h1>
+    <img style="width: 50vw;height: 50vh;" src="{{ url_for('static', filename = 'errors/404.gif') }}" class="card-img-top" alt="..." />
+  </div>
+  <br /><br />
+{% endblock %}
